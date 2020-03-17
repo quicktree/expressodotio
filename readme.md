@@ -1,4 +1,4 @@
-# Expresso
+# expressodotio
 A simple server for lots of things.
 ## Flags
 - \-\-port:&lt;number&gt; Defines what port the server will run on
