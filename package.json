@@ -1,0 +1,25 @@
+{
+  "name": "expressodotio",
+  "version": "0.0.7",
+  "description": "Simple server to serve things.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node ./server.js"
+  },
+  "keywords": [
+    "simpleserver"
+  ],
+  "author": "Matteo Baldini",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "chalk": "^3.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "minimist": "^1.2.5"
+  },
+  "bin": {
+    "expressodotio": "./server.js"
+  }
+}
