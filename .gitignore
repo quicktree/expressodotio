@@ -209,4 +209,3 @@ package.yml
 dist/
 public/
 package-lock.json
-npmpublish.yml
