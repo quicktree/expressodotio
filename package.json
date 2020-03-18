@@ -21,5 +21,13 @@
   },
   "bin": {
     "expressodotio": "./server.js"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   }
 }
