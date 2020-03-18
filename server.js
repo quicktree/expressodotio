@@ -37,6 +37,19 @@ app.use((req, res, next) => {
     next()
 })
 
+// Importing middlewares
+for (let i = 0; i < args._.length; i++) {
+    if (!args._[i].includes('js')) {
+        console.log(chalk.redBright(`Invalid file extension for ${args._[i]}`))
+    } else {
+        try {
+            app.use(require(process.cwd() + '/' + args._[i]))
+        } catch (error) {
+            console.log(chalk.redBright(error))
+        }
+    }
+}
+
 // Static files
 app.use(args.staticPath, express.static(args.staticFiles))
 
@@ -46,7 +59,7 @@ if (args.mode === 'static') {
             console.log(chalk.yellowBright('Index.html not found inside static files directory, serving other files'));
         } else {
             noIndex = true
-            console.log(chalk.green(args.staticFiles + '/index.html is being served from ' + args.staticPath));
+            console.log(chalk.green('index.html is being served from ' + args.staticPath));
         }
     })
 }
@@ -62,6 +75,7 @@ app.get(args.staticPath, (req,res) => {
     }
 })
 
+// Catchall, includes check for spa mode
 app.get('*', (req, res) => {
     if (args.mode === 'spa') {
         res.sendFile(args.staticFiles + '/index.html')

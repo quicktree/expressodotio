@@ -12,6 +12,14 @@ let args = minimist(process.argv.slice(2), {
 });
 
 module.exports.checkArgs = (rootdir) => { 
+    if (args.help) {
+        console.log('--port -> the port the server runs on (default 3000)')
+        console.log('--mode -> static | spa (default static)')
+        console.log('--staticFiles -> where to get the static files (default ./)')
+        console.log('--staticPath -> where to serve the static files (default /)')
+        console.log('any javascript file with a valid module exporting a middleware function will be loaded as middleware (Ex: expressodotio ./test.js)')
+        process.exit()
+    }
     if (typeof args.port !== 'number') {
         console.log(chalk.redBright('Argument for port is not a number'))
         return false;
