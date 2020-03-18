@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": ""
+      "pre-push": "npm version patch"
     }
   }
 }

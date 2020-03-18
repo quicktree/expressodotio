@@ -66,5 +66,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(args.port, () => {
-    console.log(chalk.green(`Expresso active on port ${args.port}`))
+    console.log(chalk.green(`expressodotio active on port ${args.port}`))
 })
