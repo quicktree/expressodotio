@@ -83,7 +83,8 @@ In any case, if a file named index.html is found in your files directory, it wil
 It is possible to include any number of middlewares with a similar syntax:
 
 	expressodotio middleware1.s middleware2.js
-They will be called on every request in the same order as specified when statring expressodotio
+They will be called on every request in the same order as specified when starting expressodotio
+
 middleware1.js could look like this:
 
 	module.exports  =  function(req,  res,  next)  {  
